@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
       - name: php-app
-        image: gestion-produits-php:v1.0
-        imagePullPolicy: Never
+        image: alexandreduro/gestion-produits-php:v1.0
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
         env:

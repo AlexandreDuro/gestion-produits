@@ -27,8 +27,8 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: gestion-produits-mysql:v1.0
-        imagePullPolicy: Never
+        image: alexandreduro/gestion-produits-mysql:v1.0
+        imagePullPolicy: IfNotPresent
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: "root"
