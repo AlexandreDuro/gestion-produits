@@ -1,0 +1,32 @@
+services:
+  php-cp:
+    build: ./php
+    image: alexandreduro/gestion-produits-php:${APP_VERSION:-v1.0}
+    ports:
+      - "${PHP_PORT:-8080}:80"
+    volumes:
+      - ./php/www:/var/www/html
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  db:
+    build: ./database
+    image: alexandreduro/gestion-produits-mysql:${APP_VERSION:-v1.0}
+    ports:
+      - "${MYSQL_PORT:-3306}:3306"
+    volumes:
+      - mysql-gestion-data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=${MYSQL_PASSWORD:-root}
+      - MYSQL_DATABASE=gestion_produits
+    networks:
+      - app-network
+
+volumes:
+  mysql-gestion-data:
+
+networks:
+  app-network:
+    driver: bridge
