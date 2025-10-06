@@ -30,11 +30,9 @@ docker push alexandreduro/gestion-produits-mysql:v1.0
   - Tag: `alexandreduro/gestion-produits-mysql:v1.0`
 
 ## 5. Fichier docker-compose.yml
-✅ [docker-compose.yml](docker-compose.yml) inclus avec :
-- Paramétrage des ports via variables d'environnement (`.env`)
-- Gestion de la version de l'application via `APP_VERSION`
+- Paramétrage des ports via `.env`
+- Gestion de la version via `APP_VERSION`
 - Volume persistant pour les données MySQL (`mysql-gestion-data`)
-- Network bridge pour la communication inter-containers
 
 ### Démarrage de l'application
 ```bash
